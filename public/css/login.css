@@ -1,0 +1,114 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    margin-top: 32px;
+}
+
+main > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 16px 1px var(--secondary-color__blur);
+    padding: 24px 48px;
+    border-radius: 20px;
+    gap: 24px;
+    max-width: 400px;
+}
+
+.form-group {
+    width: 100%;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    position: relative;
+}
+.form-group > input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    width: 100%;
+    border-radius: 5px;
+}
+.form-group > input[type="password"] {
+    width: 93%;
+}
+
+.form-group > label {
+    position: absolute;
+    left: 16px;
+    top: 8px;
+    padding: 0px 4px;
+    cursor: text;
+    background-color: var(--primary-color);
+    transition: top 125ms ease-in, left 125ms ease-in, font-size 125ms ease-in;
+}
+.form-group > input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label {
+    top: -8px;
+    left: 12px;
+    font-size: var(--font-xs);
+    color: var(--feint-color);
+}
+.form-group > i {
+    font-size: var(--font-s);
+    color: var(--secondary-color);
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    cursor: pointer;
+}
+.error__container {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    color: var(--error-color);
+    gap: 4px;
+    margin: -20px 0;
+}
+
+header > a,
+main > form > h2,
+main > form > .form-group > input,
+main > form > .form-group > label,
+main > form > p,
+main > form > p > a {
+    color: var(--secondary-color);
+}
+main > form > input[type="submit"] {
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: background-color 250ms ease-in;
+    align-self: flex-end;
+}
+main > form > input[type="submit"]:hover {
+    background-color: var(--secondary-color__hover);
+}
+
+main > form > p > a {
+    text-decoration: underline;
+}
+main > form > p {
+    text-align: center;
+}
+
+/* @media screen and (min-width: 1024px) {
+	body {
+		margin: 0 150px 64px 150px;
+	}
+}
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+	body {
+		margin: 0 64px 32px 64px;
+	}
+}
+@media screen and (max-width: 767px) {
+	body {
+		margin: 0 16px 16px 16px;
+	}
+} */

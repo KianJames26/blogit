@@ -1,0 +1,39 @@
+main {
+	flex-direction: column;
+}
+main > .blog--container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
+}
+main > .blog--container > a,
+main > .blog--container {
+	color: var(--secondary-color);
+}
+main > .blog--container > .blog--author {
+	color: var(--feint-color);
+}
+main > .blog--container > .blog--image {
+	width: 100%;
+	border-radius: 20px;
+	overflow: hidden;
+}
+main > .blog--container > .blog--image > img,
+main > .blog--container > .blog--image > .no-image {
+	width: 100%;
+}
+main > .blog--container > .blog--image > .no-image {
+	background-color: var(--secondary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--primary-color);
+	font-size: 128px;
+	aspect-ratio: 5/3;
+}
+main > .blog--container > .blog--description {
+	text-align: justify;
+	line-height: 2em;
+	text-indent: 32px;
+}

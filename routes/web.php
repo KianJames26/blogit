@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.landing');
 });
+
+//? LOGIN ROUTES
+Route::get('/login', [LoginController::class, 'index'])->name('login.form');
+//? SIGNUP ROUTES
+Route::get('/signup', [SignupController::class, 'index'])->name('signup.form');
+Route::post('/signup', [SignupController::class, 'store']);
