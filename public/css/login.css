@@ -24,7 +24,8 @@ main > form {
     border-radius: 5px;
     position: relative;
 }
-.form-group > input {
+.form-group > input[type="text"],
+.form-group > input[type="password"] {
     background-color: transparent;
     border: none;
     outline: none;
@@ -36,7 +37,8 @@ main > form {
     width: 93%;
 }
 
-.form-group > label {
+.form-group > input[type="text"] ~ label,
+.form-group > input[type="password"] ~ label {
     position: absolute;
     left: 16px;
     top: 8px;
@@ -45,8 +47,10 @@ main > form {
     background-color: var(--primary-color);
     transition: top 125ms ease-in, left 125ms ease-in, font-size 125ms ease-in;
 }
-.form-group > input:focus ~ label,
-.form-group input:not(:placeholder-shown) ~ label {
+.form-group > input[type="text"]:focus ~ label,
+.form-group > input[type="password"]:focus ~ label,
+.form-group > input[type="text"]:not(:placeholder-shown) ~ label,
+.form-group > input[type="password"]:not(:placeholder-shown) ~ label {
     top: -8px;
     left: 12px;
     font-size: var(--font-xs);
@@ -59,6 +63,44 @@ main > form {
     right: 16px;
     top: 10px;
     cursor: pointer;
+}
+.remember {
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.remember > input {
+    display: none;
+}
+.remember > .txt__s {
+    color: var(--feint-color);
+    transition: color 250ms ease-in-out;
+}
+.remember > label {
+    cursor: pointer;
+}
+.remember > input[type="checkbox"] + .custom__checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 250ms ease-in-out;
+}
+.remember > input[type="checkbox"]:checked + .custom__checkbox {
+    background-color: var(--secondary-color);
+}
+.remember > input[type="checkbox"]:checked + .custom__checkbox::after {
+    position: absolute;
+    bottom: 1px;
+    right: 4px;
+    content: "\2714";
+    font-size: 12px;
+    color: var(--primary-color);
+}
+.remember > input[type="checkbox"]:checked ~ .txt__s {
+    color: var(--secondary-color);
 }
 .error__container {
     align-self: flex-start;

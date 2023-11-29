@@ -6,11 +6,17 @@ use App\Models\User;
 use App\Rules\AlphaSymbols;
 use App\Rules\Username;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SignupController extends Controller
 {
     public function index(){
-        return view('pages.signup.index');
+        if(Auth::check()){
+            return redirect()->route('blog.index');
+        }else{
+            return view('pages.signup.index');
+        }
+
     }
     public function store(Request $request){
         $validated = $request->validate([

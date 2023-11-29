@@ -20,7 +20,7 @@
         >
     </article>
     <article class="right">
-        <img src="img/Wall post-amico.png" alt="" />
+        <img src="img/Wall post-amico.png" alt="" loading="lazy"/>
     </article>
     {{--? JS IMPORTS --}}
 </x-layout.layout>
