@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::post('/signup', [SignupController::class, 'store'])->name('signup.create'
 
 Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::post('/logout', function(){
+        Auth::user()->update(['remember_token' => null]);
         Auth::logout();
         return redirect()->route('login.form');
     });

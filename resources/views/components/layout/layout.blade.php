@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="css/style.css" />
         {{$css_imports}}
 	</head>
-	<body class="mode">
+	<body class="dark-mode">
 		<header>
 			{{$header}}
 		</header>
