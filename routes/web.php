@@ -41,5 +41,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     });
     //? BLOG ROUTES
     Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blog.show');
 });
 

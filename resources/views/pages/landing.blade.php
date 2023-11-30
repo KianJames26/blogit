@@ -1,7 +1,7 @@
 <x-layout.layout>
     {{--? CSS IMPORTS --}}
     <x-slot name="css_imports">
-        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="{{asset('css/index.css')}}" />
     </x-slot>
     {{--? HEADER --}}
     <x-slot name="header">

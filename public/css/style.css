@@ -44,6 +44,9 @@ i {
     align-items: center;
 }
 /** Global Styles */
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: var(--primary-color);
 }
@@ -184,7 +187,22 @@ main > .actions > a {
 main > .actions > a:hover {
     background-color: var(--secondary-color__hover);
 }
-
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--secondary-color);
+    padding: 16px 0;
+}
+.pagination > a {
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+.pagination > span.disabled {
+    width: 20px;
+    height: 20px;
+}
 footer {
     height: 64px;
     background-color: var(--secondary-color);

@@ -1,7 +1,7 @@
 <x-layout.layout>
     {{--? CSS IMPORTS --}}
     <x-slot name="css_imports">
-        <link rel="stylesheet" href="css/login.css" />
+        <link rel="stylesheet" href="{{asset('css/login.css')}}" />
     </x-slot>
     {{--? HEADER --}}
     <x-slot name="header">
@@ -56,6 +56,6 @@
     </form>
     {{--? JS IMPORTS --}}
     <x-slot name="js_imports">
-        <script src="js/showPassword.js"></script>
+        <script src="{{asset('js/showPassword.js')}}"></script>
     </x-slot>
 </x-layout.layout>

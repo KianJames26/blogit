@@ -11,11 +11,15 @@ class BlogController extends Controller
 
     public function index(){
         $latestBlogs = Blog::latest()->take(3)->get();
-        $blogs = Blog::paginate(9);
+        $blogs = Blog::latest()->paginate(12);
         return view('pages.blog.index')->with([
             'user' => Auth::user(),
             'latestBlogs' => $latestBlogs,
             'blogs' => $blogs
         ]);
+    }
+    public function show($id){
+        $blog = Blog::findOrFail($id);
+        return view('pages.blog.show', ['user' => Auth::user(), 'blog'=>$blog]);
     }
 }

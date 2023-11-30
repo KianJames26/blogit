@@ -10,7 +10,7 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
 		/>
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="{{asset('css/style.css')}}" />
         {{$css_imports}}
 	</head>
 	<body class="dark-mode">

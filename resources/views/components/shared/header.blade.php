@@ -15,8 +15,8 @@
 <nav class="hidden" id="navigation">
     <ul class="txt__s">
         <li class="btn"><a href="/blogs">Home</a></li>
-        <li class="btn"><a href="my_blogs.html">My Profile</a></li>
-        <li class="btn"><a href="edit-account.html">Account Settings</a></li>
+        <li class="btn"><a href="/account/:id">My Profile</a></li>
+        <li class="btn"><a href="/account/edit/:id">Account Settings</a></li>
         <form class="btn" action="/logout" method="POST">
             @csrf
             <button type="submit">Logout</button>

@@ -1,7 +1,7 @@
 <x-layout.layout>
     {{--? CSS IMPORTS --}}
     <x-slot name="css_imports">
-        <link rel="stylesheet" href="css/blogs.css" />
+        <link rel="stylesheet" href="{{asset('css/blogs.css')}}" />
     </x-slot>
     {{--? HEADER --}}
     <x-slot name="header">
@@ -30,23 +30,27 @@
         <div class="slider--pagination" id="sliderPagination"></div>
     </section>
 
-    <section class="other--blogs">
+    <section class="other--blogs" id="otherBlogs">
         <h2 class="txt__l">Other Blogs</h2>
+        <x-shared.pagination :blogs="$blogs"></x-shared.pagination>
         <div class="blogs">
             @foreach ($blogs as $blog)
                 <x-shared.blog :blog="$blog"></x-shared.blog>
             @endforeach
         </div>
+        <x-shared.pagination :blogs="$blogs"></x-shared.pagination>
     </section>
+
+
     @else
-        <section class="latest--blogs">
-            <h2 class="txt__l">No Blogs Posted Yet!</h2>
-            <p class="txt__s--bold">Create first blog by <a href="/blogs/create">Clicking Here</a>!</p>
-        </section>
+    <section class="latest--blogs">
+        <h2 class="txt__l">No Blogs Posted Yet!</h2>
+        <p class="txt__s--bold">Create first blog by <a href="/blogs/create">Clicking Here</a>!</p>
+    </section>
     @endif
     {{--? JS IMPORTS --}}
     <x-slot name="js_imports">
-        <script src="js/blogsSlider.js"></script>
-	    <script src="js/showNavigation.js"></script>
+        <script src="{{asset('js/blogsSlider.js')}}"></script>
+	    <script src="{{asset('js/showNavigation.js')}}"></script>
     </x-slot>
 </x-layout.layout>
