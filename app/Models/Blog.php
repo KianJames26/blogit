@@ -10,6 +10,12 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'blog_title',
+        'blog_description',
+        'blog_image',
+        'user_id'
+    ];
     public function scopeSearch($query, $search){
         return $query->where('blog_title', 'like', '%' . $search . '%')
                     ->orwhere('blog_description', 'like', '%' . $search . '%');

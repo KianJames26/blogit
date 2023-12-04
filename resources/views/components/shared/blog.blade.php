@@ -9,7 +9,7 @@
     <div class="blog--container__details">
         <h2 class="blog--title txt__m">{{$blog->blog_title}}</h2>
         <p class="blog--author txt__s">
-            {{date('F d, Y', strtotime($blog->created_at))}} by {{$blog->author->first_name}} {{$blog->author->last_name}}
+            {{date('F d, Y', strtotime($blog->created_at))}}, @if ($blog->author->id == Auth::user()->id) You @else {{$blog->author->first_name}} {{$blog->author->last_name}} @endif
         </p>
         <p class="blog--description txt__s">
             {{$blog->blog_description}}

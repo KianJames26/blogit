@@ -14,7 +14,7 @@
         <a href=" {{url()->previous()}} "><i class="bi bi-arrow-left txt__xl"></i></a>
         <h1 class="blog--title txt__l"> {{$blog->blog_title}} </h1>
         <p class="blog--author txt__s">
-            {{date('F d, Y', strtotime($blog->created_at))}} by {{$blog->author->first_name}} {{$blog->author->last_name}}
+            {{date('F d, Y', strtotime($blog->created_at))}}, @if ($blog->author->id == Auth::user()->id) You @else {{$blog->author->first_name}} {{$blog->author->last_name}} @endif
         </p>
         <div class="blog--image">
             @if ($blog->blog_image)

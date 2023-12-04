@@ -1,112 +1,119 @@
 main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondary-color);
 }
 main > a {
-	align-self: flex-start;
-	color: var(--secondary-color);
+    align-self: flex-start;
+    color: var(--secondary-color);
 }
 main > form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 530px;
-	gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 530px;
+    gap: 8px;
 }
 main > form > .form--group {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 main > form > .form--group > label > .required::after {
-	content: "*";
-	color: var(--error-color);
+    content: "*";
+    color: var(--error-color);
 }
 
 main > form > .form--group > input[type="text"],
 main > form > .form--group > textarea {
-	outline: none;
-	background: none;
-	border: 1px solid var(--secondary-color);
-	border-radius: 5px;
-	color: var(--secondary-color);
-	/* text-overflow: ellipsis; */
+    outline: none;
+    background: none;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    color: var(--secondary-color);
+    /* text-overflow: ellipsis; */
 }
 main > form > .form--group > textarea {
-	height: 248px;
-	resize: none;
+    height: 248px;
+    resize: none;
 }
 main > form > .form--group > input[type="file"] {
-	display: none;
+    display: none;
 }
 main > form > .form--group > .custom--file__style {
-	background-color: var(--secondary-color);
-	height: 260px;
-	border-radius: 5px;
-	display: flex;
-	justify-content: center;
-	padding: 32px 48px;
+    background-color: var(--secondary-color);
+    height: 260px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 32px 48px;
 }
 
 main > form > .form--group > .custom--file__style > .custom--file__label {
-	color: var(--primary-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border: 8px dashed var(--primary-color);
-	width: 100%;
-	cursor: pointer;
-	padding: 0 8px;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 8px dashed var(--primary-color);
+    width: 100%;
+    cursor: pointer;
+    padding: 0 8px;
 }
 main > form > .form--group > .custom--file__style > .custom--file__label > p {
-	text-align: center;
+    text-align: center;
 }
 main > form > .form--group > .custom--file__style > .custom--file__label > i {
-	font-size: 64px;
+    font-size: 64px;
 }
 main > form > .form--group > .image--preview {
-	background-color: var(--secondary-color);
-	justify-content: center;
-	align-items: center;
-	padding: 32px;
-	border-radius: 5px;
-	position: relative;
-	display: none;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    border-radius: 5px;
+    position: relative;
+    display: none;
 }
 main > form > .form--group > .image--preview > img {
-	width: 100%;
-	border-radius: 5px;
+    width: 100%;
+    border-radius: 5px;
 }
 main > form > .form--group > .image--preview > .remove--image {
-	position: absolute;
-	cursor: pointer;
-	top: 8px;
-	right: 8px;
+    position: absolute;
+    cursor: pointer;
+    top: 8px;
+    right: 8px;
 }
 main > form > .form--group > .image--preview > .remove--image > i {
-	color: var(--error-color);
-	font-size: 20px;
+    color: var(--error-color);
+    font-size: 20px;
 }
 main > form > button {
-	color: var(--primary-color);
-	display: flex;
-	align-items: center;
-	align-self: flex-end;
-	border: none;
-	background-color: var(--secondary-color);
-	gap: 4px;
-	cursor: pointer;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    border: none;
+    background-color: var(--secondary-color);
+    gap: 4px;
+    cursor: pointer;
+}
+.error__container {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    color: var(--error-color);
+    gap: 4px;
 }
 
 @media screen and (max-width: 767px) {
-	main > form {
-		max-width: 100%;
-	}
-	main > form > .form--group > .custom--file__style {
-		padding: 24px;
-	}
+    main > form {
+        max-width: 100%;
+    }
+    main > form > .form--group > .custom--file__style {
+        padding: 24px;
+    }
 }

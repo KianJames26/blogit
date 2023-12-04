@@ -12,7 +12,7 @@
             <i class="bi bi-search"></i>
         </button>
     </form>
-    <a href="create_blog.html" class="btn">
+    <a href="/blogs/create" class="btn">
         <i class="bi bi-plus-circle-fill"></i>
         <p class="txt__s">Create New Blog</p>
     </a>
