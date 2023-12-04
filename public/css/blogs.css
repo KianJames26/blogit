@@ -231,6 +231,10 @@ main {
     color: var(--secondary-color);
     gap: 16px;
 }
+.other--blogs > a {
+    align-self: flex-start;
+    color: var(--secondary-color);
+}
 .other--blogs > .blogs {
     display: grid;
     justify-content: center;
@@ -247,6 +251,7 @@ main {
     align-items: center;
     overflow: hidden;
     gap: 4px;
+    padding-bottom: 8px;
 }
 .other--blogs > .blogs > .blog--container > .blog--container__image {
     width: 100%;

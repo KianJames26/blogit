@@ -1,12 +1,12 @@
 <section class="actions">
     <form action="#" class="search--group">
-        {{-- @csrf --}}
         <input
             type="text"
             name="search"
             id="search"
             placeholder="Search"
             class="txt__s"
+            value="@if(request('search')){{request('search')}}@endif"
         />
         <button type="submit" class="search--button">
             <i class="bi bi-search"></i>
