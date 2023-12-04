@@ -9,13 +9,10 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index(){
-        if(Auth::check()){
-            return redirect()->route('blog.index');
-        }else{
-            return view('pages.login.index');
-        }
+        return view('pages.login.index');
     }
     public function authenticate(Request $request){
+
         $validated = $request;
 
         $loginKey = $validated->username;
@@ -24,10 +21,12 @@ class LoginController extends Controller
 
         $credentials = [$loginKeyField => $loginKey, 'password' => $validated->password];
 
-        if(Auth::attempt($credentials,$validated->remember)){
+        if(Auth::attempt($credentials, $validated->remember)){
             $request->session()->regenerate();
             return redirect()->route('blog.index');
+        }else{
+            return redirect()->back()->withErrors(['username'=>'Invalid Login Credentials'])->withInput(request()->parameters);
         }
-        return redirect()->back()->withErrors(['username'=>'Invalid Login Credentials'])->withInput($credentials);
+
     }
 }

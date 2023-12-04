@@ -1,6 +1,6 @@
 <section class="actions">
     <form action="#" class="search--group">
-        @csrf
+        {{-- @csrf --}}
         <input
             type="text"
             name="search"

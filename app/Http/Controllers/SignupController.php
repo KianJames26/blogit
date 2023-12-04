@@ -11,11 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class SignupController extends Controller
 {
     public function index(){
-        if(Auth::check()){
-            return redirect()->route('blog.index');
-        }else{
-            return view('pages.signup.index');
-        }
+        return view('pages.signup.index');
 
     }
     public function store(Request $request){
@@ -24,7 +20,7 @@ class SignupController extends Controller
             'last_name' => ['required', 'min:2', 'max:30', new AlphaSymbols],
             'username' =>['required', 'unique:users,username', 'min:5', 'max:20', new Username],
             'email' =>['required', 'unique:users,email'],
-            'password' =>['required', 'min:8', 'confirmed'],
+            'password' =>['required', 'min:8', 'confirmed']
         ]);
 
         $users = User::create($validated);

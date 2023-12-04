@@ -45,7 +45,8 @@
             ></i>
         </div>
         <div class="form-group remember">
-            <input type="checkbox" name="remember" id="remember">
+
+            <input type="checkbox" name="remember" id="remember" @if (old('remember')) checked @endif>
             <label for="remember" class="custom__checkbox"></label>
             <label for="remember" class="txt__s">Stay Logged In</label>
         </div>

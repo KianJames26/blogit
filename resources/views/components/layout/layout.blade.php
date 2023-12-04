@@ -11,11 +11,11 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
 		/>
 		<link rel="stylesheet" href="{{asset('css/style.css')}}" />
-        {{$css_imports}}
+        {{ $css_imports }}
 	</head>
 	<body class="dark-mode">
 		<header>
-			{{$header}}
+			{{ $header }}
 		</header>
 		<main>
 			{{ $slot }}
@@ -23,7 +23,7 @@
 		<footer></footer>
 
         @isset($js_imports)
-            {{$js_imports}}
+            {{ $js_imports }}
         @endisset
 	</body>
 </html>

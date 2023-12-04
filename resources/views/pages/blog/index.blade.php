@@ -32,16 +32,14 @@
 
     <section class="other--blogs" id="otherBlogs">
         <h2 class="txt__l">Other Blogs</h2>
-        <x-shared.pagination :blogs="$blogs"></x-shared.pagination>
+        <x-shared.pagination :blogs="$blogs" scrollTo="#otherBlogs" />
         <div class="blogs">
             @foreach ($blogs as $blog)
                 <x-shared.blog :blog="$blog"></x-shared.blog>
             @endforeach
         </div>
-        <x-shared.pagination :blogs="$blogs"></x-shared.pagination>
+        <x-shared.pagination :blogs="$blogs" scrollTo="#otherBlogs" />
     </section>
-
-
     @else
     <section class="latest--blogs">
         <h2 class="txt__l">No Blogs Posted Yet!</h2>
