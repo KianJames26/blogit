@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
@@ -56,5 +57,9 @@ Route::middleware(['auth', 'auth.basic'])->group(function () {
     Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
     //* Show Blog
     Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blog.show');
+
+    //? ACCOUNT ROUTE
+    //* Show Account
+    Route::get('/account/{id}', [AccountController::class, 'show'])->name('account.show')->middleware('checkUserId');
 });
 

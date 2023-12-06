@@ -44,19 +44,20 @@ class BlogController extends Controller
             'blog_description' => ['required', 'min:10'],
         ]);
 
-        if ($request->hasFile('blog_image')) {
-            $customFileName = time() . '.' . $request->file('blog_image')->getClientOriginalExtension();
-            $filePath = $request->file('blog_image')->storeAs('uploads/blog_images', $customFileName, 'public');
-            $blogImage = Storage::url($filePath);
-        }
-
         $blog = Blog::create([
             'blog_title' => $request->blog_title,
             'blog_description' => $request->blog_description,
             'blog_image' => $blogImage,
             'user_id' => Auth::user()->id,
         ]);
+        if ($request->hasFile('blog_image')) {
+            $customFileName = "blog". $blog->id . "_image" . '.' . $request->file('blog_image')->getClientOriginalExtension();
+            $filePath = $request->file('blog_image')->storeAs('uploads/blog_images', $customFileName, 'public');
+            $blogImage = Storage::url($filePath);
 
+            $blog->blog_image = $blogImage;
+            $blog->save();
+        }
         return redirect()->route('blog.index');
     }
 }
