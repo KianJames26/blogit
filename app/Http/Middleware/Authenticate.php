@@ -12,6 +12,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
+        session()->flash('toast', 'You must login first!');
         return $request->expectsJson() ? null : route('login.form');
     }
 }

@@ -50,6 +50,39 @@ html {
 body {
     background-color: var(--primary-color);
 }
+.toast {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 24px;
+    top: 32px;
+    z-index: 2;
+    padding: 16px 32px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.toast > p {
+    text-align: center;
+}
+.toast::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    animation: loadOut 3s ease-out 600ms 1 normal forwards;
+}
+.toast__show {
+    animation: slideLeft 500ms ease-in 0s 1 normal forwards;
+}
+.toast__hide {
+    animation: slideRight 500ms ease-out 500ms 1 normal forwards;
+}
 /** Header Styles  */
 header {
     display: flex;
@@ -171,6 +204,7 @@ main > .actions > .search--group > button {
     height: 36px;
     background-color: var(--secondary-color);
     border-radius: 50%;
+    cursor: pointer;
 }
 main > .actions > .search--group > button > i {
     color: var(--primary-color);
@@ -223,6 +257,11 @@ footer {
     }
 }
 @media screen and (max-width: 767px) {
+    .toast {
+        width: 100%;
+        right: 0;
+        top: 0;
+    }
     main,
     header {
         margin: 0 16px;
@@ -326,6 +365,38 @@ footer {
     }
 }
 /* animation: slideUp 250ms ease-in 0s 1 normal forwards; */
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(500px);
+    }
+    50% {
+        transform: translateX(250px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(250px);
+    }
+    100% {
+        transform: translateX(500px);
+        display: none;
+    }
+}
+@keyframes loadOut {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

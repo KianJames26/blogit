@@ -45,6 +45,7 @@ Route::middleware(['auth', 'auth.basic'])->group(function () {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        session()->flash('toast', 'You have been logged out!');
         return redirect()->route('login.form');
     });
 

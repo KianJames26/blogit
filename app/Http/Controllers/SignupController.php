@@ -25,6 +25,7 @@ class SignupController extends Controller
 
         $users = User::create($validated);
 
+        session()->flash('toast', 'User Created Successfully!');
         return redirect()->route('login.form');
     }
 }

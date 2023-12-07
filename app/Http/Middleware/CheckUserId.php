@@ -17,6 +17,7 @@ class CheckUserId
     public function handle(Request $request, Closure $next): Response
     {
         if($request->route('id') != Auth::user()->id){
+            session()->flash('toast', "You're not authorize to access that!");
             return redirect()->route('account.show', ['id' => Auth::user()->id]);
         };
         return $next($request);

@@ -30,11 +30,18 @@
     </section>
     <section class="user--blogs">
         <h2 class="txt__l">Blogs</h2>
+        @if ($blogs->count() > 0)
         <div class="blogs">
             @foreach ($blogs as $blog)
-                <x-user-blog :blog="$blog"></x-user-blog>
+            <x-user-blog :blog="$blog"></x-user-blog>
             @endforeach
         </div>
+        @else
+            <div class="no__blogs">
+                <h2 class="txt__l">No Blogs Posted Yet!</h2>
+                <p class="txt__s--bold">Create first blog by <a href="/blogs/create">Clicking Here</a>!</p>
+            </div>
+        @endif
     </section>
     {{--? JS IMPORTS --}}
     <x-slot name="js_imports">

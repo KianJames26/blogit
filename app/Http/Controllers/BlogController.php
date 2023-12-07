@@ -58,6 +58,7 @@ class BlogController extends Controller
             $blog->blog_image = $blogImage;
             $blog->save();
         }
+        session()->flash('toast', 'Blog Created Successfully!');
         return redirect()->route('blog.index');
     }
 }

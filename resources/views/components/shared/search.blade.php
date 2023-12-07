@@ -1,5 +1,5 @@
 <section class="actions">
-    <form action="#" class="search--group">
+    <form action="/blogs" class="search--group">
         <input
             type="text"
             name="search"

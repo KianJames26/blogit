@@ -9,7 +9,7 @@
     </x-slot>
     {{--? MAIN --}}
     <x-shared.search></x-shared.search>
-    <a href="blogs.html"><i class="bi bi-arrow-left txt__xl"></i></a>
+    <a href="{{url()->previous()}}"><i class="bi bi-arrow-left txt__xl"></i></a>
     <h2 class="txt__l">Create New Blog</h2>
     <form method="POST" action="/blogs/store" enctype="multipart/form-data">
         @csrf

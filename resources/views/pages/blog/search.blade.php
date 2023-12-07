@@ -11,7 +11,7 @@
     <x-shared.search></x-shared.search>
     @if ($searchedBlogs->count() > 0)
     <section class="other--blogs">
-        <a href="/blogs"><i class="bi bi-arrow-left txt__xl"></i></a>
+        <a href="{{url()->previous()}}"><i class="bi bi-arrow-left txt__xl"></i></a>
         <h2 class="txt__m">Search Result for : "{{request('search')}}"</h2>
         <x-shared.pagination :blogs="$searchedBlogs" scrollTo="&search={{request('search')}}" />
         <div class="blogs">

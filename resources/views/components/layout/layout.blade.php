@@ -14,6 +14,21 @@
         {{ $css_imports }}
 	</head>
 	<body class="dark-mode">
+        @if (session('toast'))
+            <div class="toast toast__show" id="toast">
+                <p class="message txt__s">{{session('toast')}}</p>
+            </div>
+            <script>
+                const toast = document.getElementById('toast');
+                const toggleToast = () => {
+                    setTimeout(() => {
+                        toast.classList.toggle("toast__show");
+                        toast.classList.toggle("toast__hide");
+                    }, 3100);
+                }
+                toggleToast();
+            </script>
+        @endif
 		<header>
 			{{ $header }}
 		</header>
