@@ -13,7 +13,14 @@
 		<link rel="stylesheet" href="{{asset('css/style.css')}}" />
         {{ $css_imports }}
 	</head>
-	<body class="dark-mode">
+	<body class="light-mode">
+		<header>
+			{{ $header }}
+		</header>
+		<main>
+			{{ $slot }}
+		</main>
+		<footer></footer>
         @if (session('toast'))
             <div class="toast toast__show" id="toast">
                 <p class="message txt__s">{{session('toast')}}</p>
@@ -29,13 +36,6 @@
                 toggleToast();
             </script>
         @endif
-		<header>
-			{{ $header }}
-		</header>
-		<main>
-			{{ $slot }}
-		</main>
-		<footer></footer>
 
         @isset($js_imports)
             {{ $js_imports }}

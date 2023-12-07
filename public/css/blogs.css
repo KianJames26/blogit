@@ -91,7 +91,7 @@ main {
     > .blog--slider__wrapper
     > .blog--container
     > .blog--container__details {
-    width: 100%;
+    width: 560px;
     display: flex;
     flex-direction: column;
     padding: 0 16px 8px 16px;
@@ -171,6 +171,7 @@ main {
     width: fit-content;
     gap: 4px;
     padding: 0 2px;
+    margin-top: auto;
 }
 .latest--blogs
     > .blog--slider
@@ -247,15 +248,14 @@ main {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     overflow: hidden;
     gap: 4px;
-    padding-bottom: 8px;
+    max-height: 291px;
 }
 .other--blogs > .blogs > .blog--container > .blog--container__image {
     width: 100%;
-    height: 142px;
+    min-height: 142px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -285,33 +285,45 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 .other--blogs > .blogs > .blog--container > .blog--container__details {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 4px;
     padding: 0 12px 4px 4px;
+    height: -webkit-fill-available;
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
     .other--blogs > .blogs {
         grid-template-columns: repeat(auto-fit, 100%);
     }
-    .other--blogs > .blogs > .blog--container {
+    /* .other--blogs > .blogs > .blog--container {
         flex-direction: row;
     }
     .other--blogs > .blogs > .blog--container > .blog--container__image {
         min-width: 200px;
-    }
+        max-width: 200px;
+    } */
 }
 @media screen and (max-width: 767px) {
+    .latest--blogs
+        > .blog--slider
+        > .blog--slider__wrapper
+        > .blog--container
+        > .blog--container__details {
+        width: 100%;
+    }
     .other--blogs > .blogs {
         grid-template-columns: repeat(auto-fit, 100%);
     }
-    .other--blogs > .blogs > .blog--container {
+    /* .other--blogs > .blogs > .blog--container {
         flex-direction: row;
     }
     .other--blogs > .blogs > .blog--container > .blog--container__image {
-        min-width: 161px;
-    }
+        min-width: 100px;
+        max-width: 100px;
+    } */
 }
