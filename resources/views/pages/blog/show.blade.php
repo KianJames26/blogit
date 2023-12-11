@@ -24,7 +24,7 @@
             @endif
         </div>
         <p class="blog--description txt__s">
-            {{$blog->blog_description}}
+            {!!nl2br(e($blog->blog_description))!!}
         </p>
     </section>
     {{--? JS IMPORTS --}}

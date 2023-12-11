@@ -52,6 +52,12 @@ Route::middleware(['auth', 'auth.basic'])->group(function () {
     //? BLOG ROUTES
     //* Create Blog
     Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
+    //* Edit Blog
+    Route::get('/blogs/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit')->middleware('checkBlogAuthor');
+    //* Update Blog
+    Route::post('/blogs/update/{id}', [BlogController::class, 'update'])->name('blog.edit')->middleware('checkBlogAuthor');
+    //* Delete Blog
+    Route::post('/blogs/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy')->middleware('checkBlogAuthor');
     //* Store Blog
     Route::post('/blogs/store', [BlogController::class, 'store'])->name('blog.store');
     //* Index Blogs

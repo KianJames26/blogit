@@ -101,6 +101,10 @@ main > form > button {
     gap: 4px;
     cursor: pointer;
 }
+#delete {
+    background: none;
+    color: var(--error-color);
+}
 .error__container {
     align-self: flex-start;
     display: flex;

@@ -61,4 +61,40 @@ class BlogController extends Controller
         session()->flash('toast', 'Blog Created Successfully!');
         return redirect()->route('blog.index');
     }
+    public function edit($id){
+        $blog = Blog::findOrFail($id);
+        return view('pages.blog.edit', ['user' => Auth::user(), 'blog'=>$blog]);
+    }
+    public function update(Request $request){
+        $id = $request->id;
+        $validated = $request->validate([
+            'blog_title' => ['required', 'min:5', 'max:255'],
+            'blog_description' => ['required', 'min:10'],
+        ]);
+        $blog = Blog::findOrFail($id);
+
+        $blogImage = $blog->blog_image;
+        $blog->blog_title = $validated['blog_title'];
+        $blog->blog_description = $validated['blog_description'];
+        $blog->save();
+
+        if ($request->hasFile('blog_image')) {
+            $customFileName = "blog". $blog->id . "_image" . '.' . $request->file('blog_image')->getClientOriginalExtension();
+            $filePath = $request->file('blog_image')->storeAs('uploads/blog_images', $customFileName, 'public');
+            $blogImage = Storage::url($filePath);
+
+            $blog->blog_image = $blogImage;
+            $blog->save();
+        }
+
+        session()->flash('toast', 'Blog Edited Successfully!');
+        return redirect()->route('account.show', ['id' => Auth::user()->id]);
+    }
+    public function destroy($id){
+        $blog = Blog::findOrFail($id);
+
+        $blog->delete();
+        session()->flash('toast', 'Blog Deleted Successfully!');
+        return redirect()->route('account.show', ['id' => Auth::user()->id]);
+    }
 }

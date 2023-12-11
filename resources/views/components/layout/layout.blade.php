@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="{{asset('css/style.css')}}" />
         {{ $css_imports }}
 	</head>
-	<body class="light-mode">
+	<body class="dark-mode">
 		<header>
 			{{ $header }}
 		</header>
